@@ -60,26 +60,26 @@ class Exporter implements ExporterInterface
 
         try {
             $csv = new CsvFileObject($filename, $fileMode);
-        } catch ( \Exception $e ) {
+        } catch (\Exception $e) {
             throw new IOException($e->getMessage(), null, $e);
         }
 
         $csv->setNewline($newline);
 
-        if ( $toCharset ) {
-            $csv->setCsvFilter(function($line) use($toCharset, $fromCharset) {
+        if ($toCharset) {
+            $csv->setCsvFilter(function ($line) use ($toCharset, $fromCharset) {
                 return mb_convert_encoding($line, $toCharset, $fromCharset);
             });
         }
 
         if (count($columnHeaders) > 0) {
             $this->checkRowConsistency($columnHeaders);
-            $csv->fputcsv($columnHeaders, $delimiter, $enclosure);
+            $csv->fput($columnHeaders, $delimiter, $enclosure);
         }
 
-        foreach ( $rows as $row ) {
+        foreach ($rows as $row) {
             $this->checkRowConsistency($row);
-            $csv->fputcsv($row, $delimiter, $enclosure);
+            $csv->fput($row, $delimiter, $enclosure);
         }
         $csv->fflush();
     }
@@ -91,17 +91,17 @@ class Exporter implements ExporterInterface
      */
     private function checkRowConsistency($row)
     {
-        if ( $this->strict === false ) {
+        if ($this->strict === false) {
             return;
         }
 
         $current = count($row);
 
-        if ( $this->rowConsistency === null ) {
+        if ($this->rowConsistency === null) {
             $this->rowConsistency = $current;
         }
 
-        if ( $current !== $this->rowConsistency ) {
+        if ($current !== $this->rowConsistency) {
             throw new StrictViolationException();
         }
 

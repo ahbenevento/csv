@@ -44,21 +44,23 @@ class CsvFileObject extends SplFileObject
      * @param array   $fields
      * @param string  $delimiter
      * @param string  $enclosure
-     * @param useless  $escape  THIS PARAM IS UNSED, BUT REQUIRED EXISTS, see https://bugs.php.net/bug.php?id=68479 and https://github.com/goodby/csv/issues/56
      * @return int|void
      */
-    public function fputcsv($fields, $delimiter = null, $enclosure = null, $escape = null)
+    public function fput($fields, $delimiter = ',', $enclosure = "\"")
     {
         // Temporary output a line to memory to get line as string
         $fp = fopen('php://temp', 'w+');
         $arguments = func_get_args();
         array_unshift($arguments, $fp);
+
+        $arguments[] = "\\";
+
         call_user_func_array('fputcsv', $arguments);
         rewind($fp);
 
         $line = '';
 
-        while ( feof($fp) === false ) {
+        while (feof($fp) === false) {
             $line .= fgets($fp);
         }
 
@@ -69,14 +71,14 @@ class CsvFileObject extends SplFileObject
          * has a hardcoded "\n", this method replaces the last LF code
          * with what the client code wishes.
          */
-        $line = rtrim($line, "\n"). $this->newline;
+        $line = rtrim($line, "\n") . $this->newline;
 
         // if the enclosure was '' | false
         if (empty($enclosure)) {
             $line = str_replace("\0", '', $line);
         }
 
-        if ( is_callable($this->csvFilter) ) {
+        if (is_callable($this->csvFilter)) {
             $line = call_user_func($this->csvFilter, $line);
         }
 
