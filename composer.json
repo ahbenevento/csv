@@ -2,7 +2,7 @@
     "name": "goodby/csv",
     "description": "CSV import/export library",
     "keywords": ["csv", "import", "export"],
-    "homepage": "https://github.com/goodby/csv",
+    "homepage": "https://github.com/ahbenevento/csv",
     "license": "MIT",
     "authors": [
         {
@@ -19,7 +19,7 @@
         }
     ],
     "require": {
-        "php": ">=5.3.2",
+        "php": ">=8",
         "ext-mbstring": "*"
     },
     "require-dev": {
