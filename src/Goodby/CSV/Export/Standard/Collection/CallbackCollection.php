@@ -1,6 +1,6 @@
 <?php
 
-namespace Goodby\CSV\Export\Standard\Collection;
+namespace AHB\CSV\Export\Standard\Collection;
 
 use Iterator;
 use IteratorAggregate;

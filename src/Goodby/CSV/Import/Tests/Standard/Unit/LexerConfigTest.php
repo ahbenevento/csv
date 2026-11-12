@@ -1,6 +1,6 @@
 <?php
 
-namespace Goodby\CSV\Import\Tests\Standard\Unit;
+namespace AHB\CSV\Import\Tests\Standard\Unit;
 
 use SplFileObject;
 use Goodby\CSV\Import\Standard\LexerConfig;

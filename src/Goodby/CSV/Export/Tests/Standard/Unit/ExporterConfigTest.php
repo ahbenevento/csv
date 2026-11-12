@@ -1,6 +1,6 @@
 <?php
 
-namespace Goodby\CSV\Export\Tests\Standard\Unit;
+namespace AHB\CSV\Export\Tests\Standard\Unit;
 
 use Goodby\CSV\Export\Standard\ExporterConfig;
 

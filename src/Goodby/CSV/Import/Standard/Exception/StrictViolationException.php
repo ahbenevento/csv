@@ -1,7 +1,5 @@
 <?php
 
-namespace Goodby\CSV\Import\Standard\Exception;
+namespace AHB\CSV\Import\Standard\Exception;
 
-class StrictViolationException extends \RuntimeException
-{
-}
+class StrictViolationException extends \RuntimeException {}

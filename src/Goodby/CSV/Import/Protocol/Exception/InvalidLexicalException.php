@@ -1,10 +1,8 @@
 <?php
 
-namespace Goodby\CSV\Import\Protocol\Exception;
+namespace AHB\CSV\Import\Protocol\Exception;
 
 /**
  * Invalid lexical Exception
  */
-class InvalidLexicalException extends \RuntimeException
-{
-}
+class InvalidLexicalException extends \RuntimeException {}

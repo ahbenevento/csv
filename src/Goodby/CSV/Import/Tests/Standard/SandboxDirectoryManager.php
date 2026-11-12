@@ -1,6 +1,6 @@
 <?php
 
-namespace Goodby\CSV\Import\Tests\Standard;
+namespace AHB\CSV\Import\Tests\Standard;
 
 /**
  * Managing sandbox directory to use when joining with the file system for tests
@@ -13,7 +13,7 @@ class SandboxDirectoryManager
      */
     public static function getSandboxDirectory()
     {
-        return sys_get_temp_dir().'/goodby/csv';
+        return sys_get_temp_dir() . '/goodby/csv';
     }
 
     /**
@@ -23,11 +23,11 @@ class SandboxDirectoryManager
     {
         $sandboxDir = self::getSandboxDirectory();
 
-        if ( file_exists($sandboxDir) ) {
+        if (file_exists($sandboxDir)) {
             exec(sprintf('rm -rf %s', $sandboxDir));
         }
 
-        if ( file_exists($sandboxDir) ) {
+        if (file_exists($sandboxDir)) {
             throw new \RuntimeException(
                 sprintf('Cannot continue test: sandbox directory already exists: %s', $sandboxDir)
             );
@@ -35,11 +35,10 @@ class SandboxDirectoryManager
 
         mkdir($sandboxDir, 0777, true);
 
-        if ( file_exists($sandboxDir) === false ) {
+        if (file_exists($sandboxDir) === false) {
             throw new \RuntimeException(
                 sprintf('Cannot continue test: sandbox directory does not exist: %s', $sandboxDir)
             );
         }
     }
 }
-

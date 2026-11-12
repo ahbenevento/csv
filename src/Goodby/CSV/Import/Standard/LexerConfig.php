@@ -1,6 +1,6 @@
 <?php
 
-namespace Goodby\CSV\Import\Standard;
+namespace AHB\CSV\Import\Standard;
 
 use SplFileObject;
 
@@ -157,8 +157,8 @@ class LexerConfig
     }
 
     /**
-     * Return flags 
-     * @return integer 
+     * Return flags
+     * @return integer
      */
     public function getFlags()
     {

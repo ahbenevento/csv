@@ -1,6 +1,6 @@
 <?php
 
-namespace Goodby\CSV\Import\Standard\Observer;
+namespace AHB\CSV\Import\Standard\Observer;
 
 class SqlObserver
 {
@@ -30,7 +30,7 @@ class SqlObserver
 
     private function buildSql($line)
     {
-        $line = array_map(function($value) {
+        $line = array_map(function ($value) {
             $number = filter_var($value, FILTER_VALIDATE_INT);
 
             if ($number !== false) {
@@ -57,6 +57,6 @@ class SqlObserver
         }, $line);
 
         return 'INSERT INTO ' . $this->table . '(' . join(', ', $this->columns) . ')' .
-               ' VALUES(' . join(', ', $line) . ');';
+            ' VALUES(' . join(', ', $line) . ');';
     }
 }

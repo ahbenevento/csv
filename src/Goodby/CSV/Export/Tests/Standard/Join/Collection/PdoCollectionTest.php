@@ -1,6 +1,6 @@
 <?php
 
-namespace Goodby\CSV\Export\Tests\Standard\Join\Collection;
+namespace AHB\CSV\Export\Tests\Standard\Join\Collection;
 
 use Goodby\CSV\Export\Standard\Collection\PdoCollection;
 use Goodby\CSV\TestHelper\DbManager;
@@ -56,7 +56,7 @@ class PdoCollectionTest extends \PHPUnit_Framework_TestCase
 
         $pdoCollection = new PdoCollection($stmt);
 
-        $callbackCollection = new CallbackCollection($pdoCollection, function($row) {
+        $callbackCollection = new CallbackCollection($pdoCollection, function ($row) {
             $row['test'] = 'test';
             return $row;
         });

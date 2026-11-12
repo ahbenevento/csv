@@ -1,6 +1,6 @@
 <?php
 
-namespace Goodby\CSV\Export\Tests\Standard\Join;
+namespace AHB\CSV\Export\Tests\Standard\Join;
 
 use Goodby\CSV\Export\Standard\Exporter;
 use Goodby\CSV\Export\Standard\ExporterConfig;
@@ -46,8 +46,8 @@ class UsageTest extends \PHPUnit_Framework_TestCase
         unset($this->manager);
     }
 
-	public function testUsage()
-	{
+    public function testUsage()
+    {
         $pdo = $this->manager->getPdo();
 
         $stmt = $pdo->prepare("SELECT * FROM collection_test");
@@ -66,7 +66,7 @@ class UsageTest extends \PHPUnit_Framework_TestCase
         $expectedContents .= "3,name\r\n";
 
         $this->assertSame($expectedContents, file_get_contents('vfs://output/data.csv'));
-	}
+    }
 
     public function testUsageWithCallbackCollection()
     {
@@ -77,7 +77,7 @@ class UsageTest extends \PHPUnit_Framework_TestCase
         $data[] = array(2, 'name2');
         $data[] = array(3, 'name3');
 
-        $collection = new CallbackCollection($data, function($row) {
+        $collection = new CallbackCollection($data, function ($row) {
             $row[1] = $row[1] . '!';
             return $row;
         });

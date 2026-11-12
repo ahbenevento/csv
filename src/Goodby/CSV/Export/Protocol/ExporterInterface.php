@@ -1,6 +1,6 @@
 <?php
 
-namespace Goodby\CSV\Export\Protocol;
+namespace AHB\CSV\Export\Protocol;
 
 use Traversable;
 use Goodby\CSV\Export\Protocol\Exception\IOException;

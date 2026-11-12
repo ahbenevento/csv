@@ -1,5 +1,5 @@
 {
-    "name": "goodby/csv",
+    "name": "ahb/csv",
     "description": "CSV import/export library with PHP 8+ compatibility.",
     "keywords": ["csv", "import", "export"],
     "homepage": "https://github.com/ahbenevento/csv",
@@ -36,7 +36,7 @@
     },
     "autoload": {
         "psr-0": {
-            "Goodby\\CSV": "src/"
+            "AHB\\CSV": "src/"
         }
     }
 }

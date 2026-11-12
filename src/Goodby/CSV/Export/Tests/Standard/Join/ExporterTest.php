@@ -1,6 +1,6 @@
 <?php
 
-namespace Goodby\CSV\Export\Tests\Standard\Join;
+namespace AHB\CSV\Export\Tests\Standard\Join;
 
 use Goodby\CSV\Export\Standard\Exporter;
 use Goodby\CSV\Export\Standard\ExporterConfig;
@@ -61,7 +61,7 @@ class ExporterTest extends \PHPUnit_Framework_TestCase
         $this->assertFileExists('vfs://output/data.csv');
         $expectedContents = "aaa,bbb,ccc,dddd\r";
         $expectedContents .= "123,456,789\r";
-        $expectedContents .= '"""aaa""","""bbb""",,'."\r";
+        $expectedContents .= '"""aaa""","""bbb""",,' . "\r";
         $this->assertSame($expectedContents, file_get_contents('vfs://output/data.csv'));
     }
 
@@ -109,8 +109,7 @@ class ExporterTest extends \PHPUnit_Framework_TestCase
             $exporter->export($noWritableCsv, array(
                 array('a', 'b', 'c'),
             ));
-        } catch ( IOException $e ) {
-
+        } catch (IOException $e) {
         }
 
         $this->assertTrue($e instanceof IOException);
@@ -131,7 +130,7 @@ class ExporterTest extends \PHPUnit_Framework_TestCase
             array('あ', 'い', 'う', 'え', 'お'),
         ));
 
-        $this->assertFileEquals(__DIR__.'/csv_files/euc-jp.csv', $csv);
+        $this->assertFileEquals(__DIR__ . '/csv_files/euc-jp.csv', $csv);
     }
 
     public function test_without_encoding()
@@ -148,7 +147,7 @@ class ExporterTest extends \PHPUnit_Framework_TestCase
             array('★', '★', '★'),
         ));
 
-        $this->assertFileEquals(__DIR__.'/csv_files/utf-8.csv', $csv);
+        $this->assertFileEquals(__DIR__ . '/csv_files/utf-8.csv', $csv);
     }
 
     public function test_unseekable_wrapper_and_custom_newline_code()
@@ -183,6 +182,6 @@ class ExporterTest extends \PHPUnit_Framework_TestCase
             array("line1\r\nline2\r\nline3", "single-line"),
         ));
 
-        $this->assertFileEquals(__DIR__.'/csv_files/multiple-lines.csv', $csv);
+        $this->assertFileEquals(__DIR__ . '/csv_files/multiple-lines.csv', $csv);
     }
 }

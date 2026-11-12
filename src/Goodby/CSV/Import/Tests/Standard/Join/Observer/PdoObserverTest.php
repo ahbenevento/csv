@@ -1,6 +1,6 @@
 <?php
 
-namespace Goodby\CSV\Import\Tests\Standard\Join\Observer;
+namespace AHB\CSV\Import\Tests\Standard\Join\Observer;
 
 use Mockery as m;
 

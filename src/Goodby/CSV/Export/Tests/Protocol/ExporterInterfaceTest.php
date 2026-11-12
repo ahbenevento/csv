@@ -1,6 +1,6 @@
 <?php
 
-namespace Goodby\CSV\Export\Tests\Protocol;
+namespace AHB\CSV\Export\Tests\Protocol;
 
 use Goodby\CSV\Export\Protocol\Exception\IOException;
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace Goodby\CSV\TestHelper;
+namespace AHB\CSV\TestHelper;
 
 class DbManager
 {

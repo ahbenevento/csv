@@ -1,6 +1,6 @@
 <?php
 
-namespace Goodby\CSV\Import\Standard;
+namespace AHB\CSV\Import\Standard;
 
 use Goodby\CSV\Import\Protocol\InterpreterInterface;
 use Goodby\CSV\Import\Protocol\Exception\InvalidLexicalException;

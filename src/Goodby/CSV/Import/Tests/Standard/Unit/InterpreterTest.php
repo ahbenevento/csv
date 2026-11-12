@@ -1,6 +1,6 @@
 <?php
 
-namespace Goodby\CSV\Import\Tests\Standard\Unit;
+namespace AHB\CSV\Import\Tests\Standard\Unit;
 
 use Mockery as m;
 
@@ -23,16 +23,16 @@ class InterpreterTest extends \PHPUnit_Framework_TestCase
      * @requires PHP 5.4
      */
     public function testStandardInterpreterWithClosure()
-	{
+    {
         $this->expectedLine = array('test', 'test', 'test');
 
         $interpreter = new Interpreter();
-        $interpreter->addObserver(function($line) {
+        $interpreter->addObserver(function ($line) {
             $this->assertEquals($this->expectedLine, $line);
         });
 
         $interpreter->interpret($this->expectedLine);
-	}
+    }
 
     public function testStandardInterpreterWithObject()
     {

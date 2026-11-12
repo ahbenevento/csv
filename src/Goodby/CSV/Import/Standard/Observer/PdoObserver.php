@@ -1,6 +1,6 @@
 <?php
 
-namespace Goodby\CSV\Import\Standard\Observer;
+namespace AHB\CSV\Import\Standard\Observer;
 
 class PdoObserver
 {
@@ -32,7 +32,7 @@ class PdoObserver
 
     private function execute($line)
     {
-        $line = array_map(function($value) {
+        $line = array_map(function ($value) {
             $number = filter_var($value, FILTER_VALIDATE_INT);
 
             if ($number !== false) {
@@ -58,12 +58,12 @@ class PdoObserver
             throw new \InvalidArgumentException('value is invalid: ' . var_export($value, 1));
         }, $line);
 
-        $prepare = array_map(function() {
+        $prepare = array_map(function () {
             return '?';
         }, $line);
 
         $sql = 'INSERT INTO ' . $this->table . '(' . join(', ', $this->columns) . ')' .
-               ' VALUES(' . join(',', $prepare) . ')';
+            ' VALUES(' . join(',', $prepare) . ')';
 
         $stmt = $this->pdo->prepare($sql);
         $stmt->execute($line);

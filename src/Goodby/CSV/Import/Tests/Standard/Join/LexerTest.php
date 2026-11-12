@@ -1,6 +1,6 @@
 <?php
 
-namespace Goodby\CSV\Import\Tests\Standard\Join;
+namespace AHB\CSV\Import\Tests\Standard\Join;
 
 use Mockery as m;
 use Goodby\CSV\Import\Standard\Lexer;
@@ -106,12 +106,12 @@ class LexerTest extends \PHPUnit_Framework_TestCase
             ->setFromCharset('UTF-8');
         $lexer = new Lexer($config);
         $interpreter = new Interpreter();
-        $interpreter->addObserver(function(array $columns) use (&$csvContents) {
+        $interpreter->addObserver(function (array $columns) use (&$csvContents) {
             $csvContents[] = $columns;
         });
 
         $lexer->parse($csvFilename, $interpreter);
-        
+
         $this->assertSame(array(
             array("ID", "NAME", "MAKER"),
             array("1", "スティック型クリーナ", "alice_updated@example.com"),
@@ -127,14 +127,14 @@ class LexerTest extends \PHPUnit_Framework_TestCase
 
         $config = new LexerConfig();
         $config
-          ->setIgnoreHeaderLine(true)
-          ->setToCharset('UTF-8')
-          ->setFromCharset('UTF-8');
+            ->setIgnoreHeaderLine(true)
+            ->setToCharset('UTF-8')
+            ->setFromCharset('UTF-8');
 
         $lexer = new Lexer($config);
 
         $interpreter = new Interpreter();
-        $interpreter->addObserver(function(array $columns) use (&$csvContents) {
+        $interpreter->addObserver(function (array $columns) use (&$csvContents) {
             $csvContents[] = $columns;
         });
 

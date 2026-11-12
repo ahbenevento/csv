@@ -1,6 +1,6 @@
 <?php
 
-namespace Goodby\CSV\Import\Standard;
+namespace AHB\CSV\Import\Standard;
 
 use Goodby\CSV\Import\Protocol\LexerInterface;
 use Goodby\CSV\Import\Protocol\InterpreterInterface;
@@ -43,7 +43,7 @@ class Lexer implements LexerInterface
         $flags          = $this->config->getFlags();
         $ignoreHeader   = $this->config->getIgnoreHeaderLine();
 
-        if ( $fromCharset === null ) {
+        if ($fromCharset === null) {
             $url = $filename;
         } else {
             $url = ConvertMbstringEncoding::getFilterURL($filename, $fromCharset, $toCharset);
@@ -56,7 +56,7 @@ class Lexer implements LexerInterface
         $originalLocale = setlocale(LC_ALL, '0'); // Backup current locale
         setlocale(LC_ALL, 'en_US.UTF-8');
 
-        foreach ( $csv as $lineNumber => $line ) {
+        foreach ($csv as $lineNumber => $line) {
             if ($ignoreHeader && $lineNumber == 0 || (count($line) === 1 && trim($line[0]) === '')) {
                 continue;
             }

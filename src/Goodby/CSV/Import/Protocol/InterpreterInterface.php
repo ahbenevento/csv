@@ -1,6 +1,6 @@
 <?php
 
-namespace Goodby\CSV\Import\Protocol;
+namespace AHB\CSV\Import\Protocol;
 
 /**
  * Interface of the Interpreter

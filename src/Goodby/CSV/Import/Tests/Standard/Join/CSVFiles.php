@@ -1,17 +1,17 @@
 <?php
 
-namespace Goodby\CSV\Import\Tests\Standard\Join;
+namespace AHB\CSV\Import\Tests\Standard\Join;
 
 class CSVFiles
 {
     public static function getShiftJisCsv()
     {
-        return __DIR__.'/csv_files/sjis.csv';
+        return __DIR__ . '/csv_files/sjis.csv';
     }
 
     public static function getMacExcelCsv()
     {
-        return __DIR__.'/csv_files/mac-excel.csv';
+        return __DIR__ . '/csv_files/mac-excel.csv';
     }
 
     public static function getMacExcelLines()
@@ -24,7 +24,7 @@ class CSVFiles
 
     public static function getTabSeparatedCsv()
     {
-        return __DIR__.'/csv_files/tab-separated.csv';
+        return __DIR__ . '/csv_files/tab-separated.csv';
     }
 
     public static function getTabSeparatedLines()
@@ -37,7 +37,7 @@ class CSVFiles
 
     public static function getColonSeparatedCsv()
     {
-        return __DIR__.'/csv_files/colon-separated.csv';
+        return __DIR__ . '/csv_files/colon-separated.csv';
     }
 
     public static function getColonSeparatedLines()
@@ -50,7 +50,7 @@ class CSVFiles
 
     public static function getUtf8Csv()
     {
-        return __DIR__.'/csv_files/utf-8.csv';
+        return __DIR__ . '/csv_files/utf-8.csv';
     }
 
     public static function getUtf8Lines()
@@ -64,6 +64,6 @@ class CSVFiles
 
     public static function getIssue5CSV()
     {
-        return __DIR__.'/csv_files/issue-5.csv';
+        return __DIR__ . '/csv_files/issue-5.csv';
     }
 }

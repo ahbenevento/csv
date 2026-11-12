@@ -1,6 +1,6 @@
 <?php
 
-namespace Goodby\CSV\Export\Standard;
+namespace AHB\CSV\Export\Standard;
 
 use Goodby\CSV\Export\Protocol\ExporterInterface;
 use Goodby\CSV\Export\Protocol\Exception\IOException;
