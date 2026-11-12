@@ -1,6 +1,6 @@
 {
     "name": "goodby/csv",
-    "description": "CSV import/export library",
+    "description": "CSV import/export library with PHP 8+ compatibility.",
     "keywords": ["csv", "import", "export"],
     "homepage": "https://github.com/ahbenevento/csv",
     "license": "MIT",
@@ -16,6 +16,12 @@
             "email": "suinyeze@gmail.com",
             "homepage": "https://www.facebook.com/suinyeze",
             "role": "Developer, Renaming Specialist"
+        },
+        {
+            "name": "ahb",
+            "email": "ahbenevento@gmail.com",
+            "homepage": "https://github.com/ahbenevento",
+            "role": "Developer for PHP 8+"
         }
     ],
     "require": {
